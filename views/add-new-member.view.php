@@ -36,7 +36,7 @@ require_once("../partials/header.php");
 
 <h3>Dodavanje novog člana</h3>
 
-<form action="obrada_forme.php" method="post" class="col-xl-4">
+<form action="../../gym/services/add-new-member.php" method="POST" class="col-xl-4">
     <div class="form-group">
       <label for="ime">Ime:</label>
       <input type="text" id="ime" name="first_name" required>
@@ -60,7 +60,7 @@ require_once("../partials/header.php");
     <div class="form-group">
       <label for="telefon">Trening plan:</label>
       <select name="training_plan_id" class="form-select">
-        <option selected >Bez plana</option>
+        <option value="" >Bez plana</option>
         <?php foreach($allTrainingPlans as $training_plan): ?>
             <option value="<?= $training_plan['plan_id']?>"><?= $training_plan['name']. " - ". $training_plan['price']." €"  ?></option>
         <?php endforeach; ?>
@@ -69,13 +69,16 @@ require_once("../partials/header.php");
     
     <div class="form-group">
       <label for="telefon">Dodijeli trenera:</label>
-      <select name="training_plan_id" class="form-select">
-        <option selected >Bez trenera</option>
+      <select name="trainer_id" class="form-select">
+        <option value="" >Bez trenera</option>
         <?php foreach($allTrainers as $trainer): ?>
             <option value="<?= $trainer['trainer_id']?>"><?= $trainer['first_name']. " ". $trainer['last_name']  ?></option>
         <?php endforeach; ?>
       </select>
     </div>
+
+    <!-- TODO: Dodati upload fotografije -->
+    
 
     <button type="submit">Dodaj</button>
   </form>
