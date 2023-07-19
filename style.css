@@ -1,0 +1,10 @@
+nav {
+    background-color: rgb(59, 59, 59);
+    padding: 5px;
+    text-align: left;
+    color: white;
+}
+
+.login_input input {
+    width: 100px !important;
+}
