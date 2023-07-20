@@ -11,6 +11,7 @@ $sql = "SELECT * FROM trainers";
 $res = mysqli_query($conn,$sql);
 
 $allTrainers = mysqli_fetch_all($res,MYSQLI_ASSOC);
+$conn->close();
 
 
 require '../../gym/views/add-new-member.view.php';

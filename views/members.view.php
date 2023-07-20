@@ -11,9 +11,13 @@ require_once("../partials/header.php");
 
 </style>
 
-
+<?php if (isset($_SESSION['msg'])) {
+  echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>" . $_SESSION['msg'] . "</div>";
+  unset($_SESSION['msg']);
+} ?>
 
 <h3>Stranica sa članovima</h3>  <a href="../../gym/members/add-new.php" class="btn btn-warning m-3">Dodaj novog člana</a>
+<a href="../../gym/services/export.service.php?exp=members" class="btn btn-info m-3">Export članova u Excel</a>
 
 <div class="container">
     <div class="row">
@@ -56,8 +60,9 @@ require_once("../partials/header.php");
 
             </p>
           </div>
-          <div class="card-footer">
-            <a href="putanja/do/pdf_karte_pristupa1.pdf" class="btn btn-primary">PDF kartica</a>
+          <div class="card-footer d-flex">
+            <a href="putanja/do/pdf_karte_pristupa1.pdf" class="btn btn-primary m-1 disabled">PDF kartica</a>
+            <a href="../../gym/services/delete-member.service.php?did=<?= $member['member_id']; ?>" class="btn btn-danger m-1">Delete</a>
           </div>
         </div>
       </div>
