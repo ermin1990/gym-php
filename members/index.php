@@ -12,37 +12,6 @@ LEFT JOIN `trainers` ON members.trainer_id = trainers.trainer_id;";
 $res = mysqli_query($conn,$sql);
 
 $allMembers = mysqli_fetch_all($res,MYSQLI_ASSOC);
-
-
-//Ispisivanje jednog trenera
-
-/* function trainerName($trainer_id){
-global $conn;
-    $sql = "SELECT * FROM trainers WHERE trainer_id = ?";
-   
-    $stmt = mysqli_prepare($conn, $sql);
-    if (!$stmt) {
-        die("Greška u pripremi upita: " . mysqli_error($conn));
-    }
-   
-    // Bindovanje parametra na upit
-    mysqli_stmt_bind_param($stmt, "i", $trainer_id);
-    
-    // Izvršavanje
-    mysqli_stmt_execute($stmt);
-
-    // Dohvaćanje rezultata
-   $result = mysqli_stmt_get_result($stmt);
-
-   while ($row = mysqli_fetch_assoc($result)) {
-    echo $row['first_name'] . " " . $row['last_name'];
-}
-
-// Zatvaranje statement objekta
-mysqli_stmt_close($stmt);
-}
- */
-
-
+$conn->close();
 
 require '../../gym/views/members.view.php';

@@ -70,7 +70,7 @@ require_once("../partials/header.php");
   </style>
 
 
-<h3>Dodavanje novog člana</h3>
+<h3>Dodavanje novog trenera</h3>
 
 <?php if (isset($_SESSION['msg'])):?>
   <div class='alert alert-danger alert-dismissible fade show' role='alert'>
@@ -85,7 +85,7 @@ require_once("../partials/header.php");
 
 
 
-<form action="../../gym/services/add-new-member.service.php" method="POST" class="col-xl-4" enctype="multipart/form-data">
+<form action="../../gym/services/add-new-trainer.service.php" method="POST" class="col-xl-4" enctype="multipart/form-data">
     <div class="form-group">
       <label for="ime">Ime:</label>
       <input type="text" id="ime" name="first_name" required>
@@ -117,29 +117,8 @@ require_once("../partials/header.php");
 
 
     
-    <div class="form-group">
-      <label for="telefon">Trening plan:</label>
-      <select name="training_plan_id" class="form-select">
-      <option value sellected>Bez plana</option>
-        <?php foreach($allTrainingPlans as $training_plan): ?>
-            <option value="<?= $training_plan['plan_id']?>"><?= $training_plan['name']. " - ". $training_plan['price']." €"  ?></option>
-        <?php endforeach; ?>
-      </select>
-    </div>
-    
-    <div class="form-group">
-      <label for="telefon">Dodijeli trenera:</label>
-      <select name="trainer_id" class="form-select">
-        <option value sellected >Bez trenera</option>
-        <?php foreach($allTrainers as $trainer): ?>
-            <option value="<?= $trainer['trainer_id']?>"><?= $trainer['first_name']. " ". $trainer['last_name']  ?></option>
-        <?php endforeach; ?>
-      </select>
-    </div>
-
-    
           <br>
-    <button type="submit" class="mt-3">Sačuvaj korisnika</button>
+    <button type="submit" class="mt-3">Dodaj novog trenera</button>
   </form>
 
 

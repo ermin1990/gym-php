@@ -1,8 +1,10 @@
 <?php 
 require_once '../../gym/config.php';
 
-//LOGIKA
+$sql = "SELECT * FROM trainers";
+$res = mysqli_query($conn,$sql);
 
+$allTrainers = mysqli_fetch_all($res,MYSQLI_ASSOC);
 
 
 

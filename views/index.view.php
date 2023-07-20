@@ -14,14 +14,31 @@ require_once 'partials/header.php';
         color: #000;
     }
     .card-img-top {
-      max-width: 50px; /* Prilagodite željenu veličinu ikonica */
-      max-height: 50px; /* Prilagodite željenu veličinu ikonica */
+      max-width: 120px; /* Prilagodite željenu veličinu ikonica */
+      max-height: 120px; /* Prilagodite željenu veličinu ikonica */
     }
     .card-title {
       font-size: 16px; /* Prilagodite željenu veličinu naslova */
       margin-top: 10px;
     }
+
+    .image-container {
+    max-height: 330px;
+    overflow: hidden;
+    border-radius:5px;
+    
+}
+
+.img-fit {
+    width: 100%;
+    height: 60%;
+    object-fit: fit;
+}
   </style>
+
+<div class="image-container">
+        <img src="../../gym/images/gymhomepage.png" alt="Slika" class="img-fit">  
+    </div>
 
 <div class="container">
     <div class="row justify-content-center">
