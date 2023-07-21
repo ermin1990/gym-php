@@ -70,7 +70,7 @@ require_once("partials/header.php");
   </style>
 
 
-<h3>Dodavanje novog člana</h3>
+<h3>Izmjena podataka člana</h3>
 
 <?php if (isset($_SESSION['msg'])):?>
   <div class='alert alert-danger alert-dismissible fade show' role='alert'>
@@ -83,63 +83,56 @@ require_once("partials/header.php");
 <?php endif; ?>
 
 
-
-
-<form action="../../gym/services/add-new-member.service.php" method="POST" class="col-xl-4" enctype="multipart/form-data">
+<form action="../../gym/services/edit-member.service.php" method="POST" class="col-xl-4">
+    <input type="hidden" value="<?= $member['member_id'] ?>" name="member_id">
     <div class="form-group">
       <label for="ime">Ime:</label>
-      <input type="text" id="ime" name="first_name" required>
+      <input type="text" id="ime" name="first_name" value="<?= $member['first_name'] ?>" required>
     </div>
 
     <div class="form-group">
       <label for="prezime">Prezime:</label>
-      <input type="text" id="prezime" name="last_name" required>
+      <input type="text" id="prezime" name="last_name" value="<?= $member['last_name'] ?>" required>
     </div>
 
     <div class="form-group">
       <label for="email">E-mail:</label>
-      <input type="email" id="email" name="email" required>
+      <input type="email" id="email" name="email" value="<?= $member['email'] ?>" required>
     </div>
 
     <div class="form-group">
       <label for="telefon">Telefon:</label>
-      <input type="tel" id="telefon" name="phone_number" required>
+      <input type="tel" id="telefon" name="phone_number" value="<?= $member['phone_number'] ?>" required>
     </div>
-
-
-    
-    <div class="upload-container">
-        <input type="file" name="image" id="image" class="file-input">
-        <label for="image" class="file-label">Odaberi sliku</label>
-        <div class="image-preview" id="image-preview"></div>
-    </div>
-    <script src="../js/script.js"></script>
-
 
     
     <div class="form-group">
-      <label for="telefon">Trening plan:</label>
+
+    <label for="telefon">Trenutni trener: <?php if(!$member['training_plan_name']){echo "Nema plana";}else{echo $member['training_plan_name'];} ?></label>
+      <label for="telefon">Izmjeni plan:</label>
       <select name="training_plan_id" class="form-select">
-      <option value sellected>Bez plana</option>
-        <?php foreach($allTrainingPlans as $training_plan): ?>
+      <option value>Bez plana</option>
+        <?php foreach($allPlans as $training_plan): ?>
             <option value="<?= $training_plan['plan_id']?>"><?= $training_plan['name']. " - ". $training_plan['price']." €"  ?></option>
         <?php endforeach; ?>
       </select>
     </div>
     
     <div class="form-group">
-      <label for="telefon">Dodijeli trenera:</label>
+      
+      <label for="telefon">Trenutni trener: <?php if(!$member['trainer_fName']){echo "Nema trenera";}else{echo $member['trainer_fName']." ".$member['trainer_lName'];} ?></label>
+      <label for="telefon">Izmjeni trenera:</label>
       <select name="trainer_id" class="form-select">
         <option value sellected >Bez trenera</option>
         <?php foreach($allTrainers as $trainer): ?>
-            <option value="<?= $trainer['trainer_id']?>"><?= $trainer['first_name']. " ". $trainer['last_name']  ?></option>
+            <option value="<?= $trainer['trainer_id']?>"><?= $trainer['first_name']. " ". $trainer['last_name'] ?></option>
         <?php endforeach; ?>
       </select>
     </div>
 
     
           <br>
-    <button type="submit" class="mt-3">Sačuvaj korisnika</button>
+    <button type="submit" class="mt-3 btn btn-warning">Sačuvaj podatke</button>
   </form>
 
 

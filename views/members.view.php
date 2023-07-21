@@ -1,5 +1,5 @@
 <?php 
-require_once("../partials/header.php");
+require_once("partials/header.php");
 ?>
 
 <style>
@@ -18,6 +18,9 @@ require_once("../partials/header.php");
 
 <h3>Stranica sa članovima</h3>  <a href="../../gym/members/add-new.php" class="btn btn-warning m-3">Dodaj novog člana</a>
 <a href="../../gym/services/export.service.php?exp=members" class="btn btn-info m-3">Export članova u Excel</a>
+
+
+
 
 <div class="container">
     <div class="row">
@@ -63,6 +66,7 @@ require_once("../partials/header.php");
           <div class="card-footer d-flex">
             <a href="putanja/do/pdf_karte_pristupa1.pdf" class="btn btn-primary m-1 disabled">PDF kartica</a>
             <a href="../../gym/services/delete-member.service.php?did=<?= $member['member_id']; ?>" class="btn btn-danger m-1">Delete</a>
+            <a href="../../gym/members/edit-member.php?did=<?= $member['member_id']; ?>" class="btn btn-warning m-1">Edit</a>
           </div>
         </div>
       </div>
@@ -73,5 +77,5 @@ require_once("../partials/header.php");
 
 
 
-<?php require_once("../partials/footer.php");
+<?php require_once("partials/footer.php");
  ?>
