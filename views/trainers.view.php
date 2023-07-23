@@ -1,5 +1,5 @@
 <?php 
-require_once("../partials/header.php");
+require_once("partials/header.php");
 ?>
 
 
@@ -45,7 +45,7 @@ require_once("../partials/header.php");
 
           <td>
           <a href="../../gym/services/delete-trainer.service.php?did=<?= $trainer['trainer_id']; ?>" class="btn btn-danger btn-sm m-1">Delete</a>
-          <a href="#" class="btn btn-warning btn-sm m-1">Edit</a></td>
+          <a href="../../gym/trainers/edit-trainer.php?did=<?= $trainer['trainer_id']; ?>" class="btn btn-warning btn-sm m-1">Edit</a></td>
           
 
             </tr>
@@ -56,5 +56,5 @@ require_once("../partials/header.php");
     </div>
 
 
-<?php require_once("../partials/footer.php");
+<?php require_once("partials/footer.php");
  ?>

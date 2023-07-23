@@ -1,5 +1,5 @@
 <?php 
-require_once("../partials/header.php");
+require_once("partials/header.php");
 ?>
 
 <h3>Planovi treniranja</h3>  <a href="../../gym/plans/add-new-plan.php" class="btn btn-warning m-3">Dodaj novi plan</a>
@@ -36,5 +36,5 @@ require_once("../partials/header.php");
     
 
 
-<?php require_once("../partials/footer.php");
+<?php require_once("partials/footer.php");
  ?>

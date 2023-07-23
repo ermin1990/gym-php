@@ -1,5 +1,5 @@
 <?php 
-require_once("../partials/header.php");
+require_once("partials/header.php");
 ?>
 
 <style>
@@ -72,6 +72,6 @@ require_once("../partials/header.php");
 
 
 
-<?php require_once("../partials/footer.php");
+<?php require_once("partials/footer.php");
  ?>
 
