@@ -64,7 +64,7 @@ require_once("partials/header.php");
             </p>
           </div>
           <div class="card-footer d-flex">
-            <a href="putanja/do/pdf_karte_pristupa1.pdf" class="btn btn-primary m-1 disabled">PDF kartica</a>
+            <a href="../../gym/services/pdf-export.service.php?did=<?= $member['member_id']; ?>" class="btn btn-primary m-1">PDF kartica</a>
             <a href="../../gym/services/delete-member.service.php?did=<?= $member['member_id']; ?>" class="btn btn-danger m-1">Delete</a>
             <a href="../../gym/members/edit-member.php?did=<?= $member['member_id']; ?>" class="btn btn-warning m-1">Edit</a>
           </div>
